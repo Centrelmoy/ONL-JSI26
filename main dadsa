@@ -1,12 +1,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
 const firebaseConfig = {
-  apiKey: "AIzaSyDVYlTGCW7y4OiMnhUP30NgxwXAtGSbQjA",
-  authDomain: "onl-jsi26.firebaseapp.com",
-  projectId: "onl-jsi26",
-  storageBucket: "onl-jsi26.appspot.com",
-  messagingSenderId: "1083840212072",
-  appId: "1:1083840212072:web:cf57506f2cc61aaf12dfdd",
-  measurementId: "G-WH1HFCM2XK",
+  apiKey: "AIzaSyDREbAwo7ApBpoAbllt3IVOLuC5e_HeszY",
+  authDomain: "blog-web-jsi26.firebaseapp.com",
+  projectId: "blog-web-jsi26",
+  storageBucket: "blog-web-jsi26.appspot.com",
+  messagingSenderId: "388264038064",
+  appId: "1:388264038064:web:284b87b911d48508a6b575",
+  measurementId: "G-F9Q4X3631J",
 };
 const app = initializeApp(firebaseConfig);
 import {
@@ -28,7 +28,7 @@ import {
 const db = getFirestore(app);
 const auth = getAuth();
 var uid = null;
-var blogUpdate = null;
+var blogUpdate = null
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -161,4 +161,3 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
-

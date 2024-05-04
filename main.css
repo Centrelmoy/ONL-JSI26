@@ -35,3 +35,8 @@
     background-color: #fff;
     border: 1px solid #000;
 }
+
+.btn-delete{
+    padding: 8px 16px;
+    cursor: pointer;
+}
