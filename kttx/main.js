@@ -1,18 +1,17 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
 const firebaseConfig = {
-  apiKey: "AIzaSyDREbAwo7ApBpoAbllt3IVOLuC5e_HeszY",
-  authDomain: "blog-web-jsi26.firebaseapp.com",
-  projectId: "blog-web-jsi26",
-  storageBucket: "blog-web-jsi26.appspot.com",
-  messagingSenderId: "388264038064",
-  appId: "1:388264038064:web:284b87b911d48508a6b575",
-  measurementId: "G-F9Q4X3631J",
+    apiKey: "AIzaSyDVYlTGCW7y4OiMnhUP30NgxwXAtGSbQjA",
+    authDomain: "onl-jsi26.firebaseapp.com",
+    projectId: "onl-jsi26",
+    storageBucket: "onl-jsi26.appspot.com",
+    messagingSenderId: "1083840212072",
+    appId: "1:1083840212072:web:cf57506f2cc61aaf12dfdd",
+    measurementId: "G-WH1HFCM2XK"
 };
 const app = initializeApp(firebaseConfig);
 import {
   getAuth,
   onAuthStateChanged,
-  signOut,
 } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
 
 import {
@@ -28,7 +27,7 @@ import {
 const db = getFirestore(app);
 const auth = getAuth();
 var uid = null;
-var blogUpdate = null
+var blogUpdate = null;
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -39,35 +38,31 @@ onAuthStateChanged(auth, (user) => {
   renderBlogs();
 });
 
-const logout_btn = document.getElementById("logout_btn");
-logout_btn.addEventListener("click", (e) => {
-  e.preventDefault();
-  signOut(auth)
-    .then(() => {
-      window.location.href = "login.html";
-    })
-    .catch((error) => {
-      alert(error.message);
-    });
-});
-
 const add_blog_btn = document.getElementById("add_blog_btn");
 add_blog_btn.addEventListener("click", (e) => {
   e.preventDefault();
   const title = document.getElementById("blog-title").value;
   const content = document.getElementById("blog-content").value;
-  if (title === "" || content === "") {
+  const price = document.getElementById("blog-price").value;
+  const picture = document.getElementById("blog-picture").value;
+
+
+  if (title === "" || content === "" || picture === "" || price === "") {
     alert("Please fill in all fields");
     return;
   }
   addDoc(collection(db, "blogs"), {
     title: title,
+    picture: picture,
+    price: price,
     content: content,
     uid: uid,
   })
     .then(() => {
       alert("Blog added successfully");
       document.getElementById("blog-title").value = "";
+      document.getElementById("blog-picture").value = "";
+      document.getElementById("blog-price").value = "";
       document.getElementById("blog-content").value = "";
       renderBlogs();
     })
@@ -92,6 +87,9 @@ const renderBlogs = async () => {
     blog.innerHTML = `
     <div class="box-blog-title">${data.title}</div>
     <div class="box-blog-body">${data.content}</div>
+    <div class="box-blog-price">${data.price} VND</div>
+    <div class="box-blog-picture">${data.picture}</div>
+
     ${stringBtn}
     `;
     document.getElementById("box-render").appendChild(blog);
@@ -117,6 +115,8 @@ const renderBlogs = async () => {
         }
         document.getElementById("blog-title-update").value = data.title;
         document.getElementById("blog-content-update").value = data.content;
+        document.getElementById("blog-content-update").value = data.picture;
+        document.getElementById("blog-content-update").value = data.price;
       };
     });
   });
@@ -126,38 +126,33 @@ document.getElementById("update_blog_btn").addEventListener("click", async (e) =
   e.preventDefault();
   const title = document.getElementById("blog-title-update").value;
   const content = document.getElementById("blog-content-update").value;
-  if (title === "" || content === "") {
+  const picture = document.getElementById("blog-content-update").value;
+  const price = document.getElementById("blog-content-update").value;
+  if (title === "" || content === "" || picture === "" || price === "") {
     alert("Please fill in all fields");
     return;
   }
   await updateDoc(doc(db, "blogs", blogUpdate.id), {
     title: title,
     content: content,
+    picture: picture,
+    price: price,
   });
   alert("Blog updated successfully");
   renderBlogs();
   modal.style.display = "none";
 });
-var modal = document.getElementById("myModal");
 
-// Get the modal
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+const form = document.getElementById("imageForm");
+const imageContainer = document.getElementById("imageContainer");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-  modal.style.display = "none";
-};
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  const imageUrl = document.getElementById("imageUrl").value;
+  const image = document.createElement("img");
+  image.src = imageUrl;
+  image.alt = "User-selected image";
+  imageContainer.innerHTML = "";
+  imageContainer.appendChild(image);
+});
