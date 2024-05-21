@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile Form</title>
+    <button id="myButton">click to go back to main</button>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .form-container {
+        margin: 0 20px;
+      }
+
+      form {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 20px;
+        display: flex;
+      }
+
+      .column-left {
+        flex: 1;
+        padding-right: 20px;
+      }
+
+      .column-right {
+        flex: 1;
+        padding-left: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+        font-weight: bold;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <form action="" id="profileForm">
+        <div class="column-left">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" required />
+
+          <label for="gender">Gender:</label>
+          <select name="gender" id="gender" required>
+            <option value="male">male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="age">Age:</label>
+          <input type="number" name="age" id="age" required />
+
+          <button type="submit" id="saveBtn" disabled>Save</button>
+          <button type="button" id="editBtn">Edit</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const form = document.getElementById("profileForm");
+      const nameInput = document.getElementById("name");
+      const ageInput = document.getElementById("age");
+      const genderInput = document.getElementById("gender");
+      const saveBtn = document.getElementById("saveBtn");
+      const editBtn = document.getElementById("editBtn");
+
+      window.addEventListener("load", function () {
+        nameInput.value = localStorage.getItem("name") || "";
+        ageInput.value = localStorage.getItem("age") || "";
+        genderInput.value = localStorage.getItem("gender") || "";
+      });
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        localStorage.setItem("name", nameInput.value);
+        localStorage.setItem("age", ageInput.value);
+        localStorage.setItem("gender", genderInput.value);
+
+        nameInput.disabled = true;
+        ageInput.disabled = true;
+        genderInput.disabled = true;
+        saveBtn.disabled = true;
+        editBtn.disabled = false;
+      });
+
+      editBtn.addEventListener("click", function () {
+        nameInput.disabled = false;
+        ageInput.disabled = false;
+        genderInput.disabled = false;
+        saveBtn.disabled = false;
+        editBtn.disabled = true;
+      });
+
+      var button = document.getElementById("myButton");
+      button.addEventListener("click", function () {
+        document.location.href = "../index.html";
+      });
+    </script>
+  </body>
+</html>
