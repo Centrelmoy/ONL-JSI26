@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 60%;
+    margin: 0 auto;
+}
+
+/* Slide */
+.slide{
+    width: 100%;
+    height: 45vh;
+    background-color: red;
+}
+.slide-container{
+    height: 100%;
+    background-color: violet;
+}
+/* Slide */
+/* BANNER-2 */
+.banner-2{
+    margin-top: 20px;
+    width: 100%;
+    height: 20vh;
+    background-color: aqua;
+}
+.banner-2-container{
+    height: 100%;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:20px;
+}
+.banner-2-item{
+    width: 32%;
+    height: 100%;
+    background-color: chartreuse;
+}
+.banner-2-item img{
+    width: 100%;
+    height: 100%;
+}
+/* BANNER-2 */

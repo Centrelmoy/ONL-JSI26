@@ -1,0 +1,6 @@
+input[type="text"], input[type="price"], input[type="image"], input[type="description"], input[type="image"]  {
+	width: 73%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px ;
+}
