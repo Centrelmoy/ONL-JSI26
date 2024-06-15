@@ -21,8 +21,29 @@
                     <li><a href="home.html" class="link active">Home</a></li>
                     <li><a href="male-prod.html" class="link">Male</a></li>
                     <li><a href="female-prod.html" class="link">Female</a></li>
-                    <li><a href="discount-prod.html" class="link">About</a></li>
+                    <li><a href="discount-prod.html" class="link">Discount</a></li>
+                </div>
+                <div class="nav-button">
+                    <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button>
+                    <button class="btn" id="registerBtn" onclick="register()">Sign Up</button>
+                </div>
+                <div class="nav-menu-btn">
+                    <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+                </div>
                 </ul>
             </div>
+
+            <script>
+                function login() {
+                    window.location.href = "signup-signin.html";
+                }
+            
+                function register() {
+                    window.location.href = "signup-signin.html";
+                }
+            
+            </script>           
 </body>
+<script type="module" src="config.js"></script>
+<script type="module" src="home.js"></script>
 </html>
