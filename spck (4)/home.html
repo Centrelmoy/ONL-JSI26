@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>Vu Anh</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="home.html" class="link active">Home</a></li>
+                    <li><a href="male-prod.html" class="link">Male</a></li>
+                    <li><a href="female-prod.html" class="link">Female</a></li>
+                    <li><a href="discount-prod.html" class="link">Discount</a></li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button>
+                <button class="btn" id="registerBtn" onclick="register()">Sign Up</button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+    </div>
+    <div class="main-slide" >
+        <img  src="football.jpg" alt="">
+        <h1>HÃY MUA ĐỒ CỦA CHÚNG TÔI</h1>
+    </div>
+    <div style="height: 700px ; background-color: aqua; width: 100%;">
+    </div>
+    <script>
+        function login() {
+            window.location.href = "signup-signin.html";
+        }
+
+        function register() {
+            window.location.href = "signup-signin.html";
+        }
+
+    </script>
+</body>
+<script type="module" src="config.js"></script>
+<script type="module" src="home.js"></script>
+
+</html>
