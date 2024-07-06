@@ -19,9 +19,9 @@
 
       <nav class="navbar">
         <a href="index.html">Home</a>
-        <a href="#male">Male</a>
-        <a href="#female">Female</a>
-        <a href="#best">Best Seller</a>
+        <a href="../buying/male.html">Male</a>
+        <a href="../buying/female.html">Female</a>
+        <a href="../buying/best.html">Best Seller</a>
       </nav>
 
       <div class="icons">
@@ -42,7 +42,7 @@
           </svg>
         </a>
 
-        <a href="../signin/signup-signin.html" class="fa-solid fa-user"></a>
+        <a href="userinfo.html" class="fa-solid fa-user"></a>
       </div>
     </header>
 
@@ -58,6 +58,108 @@
         <a href="#" class="btn">shop now</a>
       </div>
     </section>
+
+    <div class="container">
+      <div class="progress-container">
+        <ul id="progressbar">
+          <li class="active" id="step1">
+            <strong>1993</strong>
+          </li>
+          <li id="step2">
+            <strong>1999</strong>
+          </li>
+          <li id="step3">
+            <strong>2007</strong>
+          </li>
+          <li id="step4">
+            <strong>2024</strong>
+          </li>
+        </ul>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+      </div>
+      <div class="step-container">
+        <fieldset>
+          <h2>
+            Everything is simply a shape, a form and an identifier to let others
+            recognize me as me. But then, what am I? Is this me? My true self?
+            My fake self? What is it that I am? Nobody understands me.
+          </h2>
+          <input
+            type="button"
+            name="next-step"
+            class="next-step"
+            value="Next Step"
+          />
+        </fieldset>
+        <fieldset>
+          <h2>
+            You hate yourself, don't you? That's why you hurt others. Deep down
+            you know you suffer more when you cause someone else pain... than if
+            you just let yourself get hurt. But Shinji, that was your decision,
+            so it makes it a valid choice. That's what you wanted. So, that
+            makes it worthwhile. Stop lying to yourself and realize that you
+            do have options. Then... accept the choices you've made.
+          </h2>
+          <input
+            type="button"
+            name="next-step"
+            class="next-step"
+            value="Next Step"
+          />
+          <input
+            type="button"
+            name="previous-step"
+            class="previous-step"
+            value="Previous Step"
+          />
+        </fieldset>
+        <fieldset>
+          <h2>
+            I... I can't. I'm no good. I can't pilot EVA if all I do is hurt and
+            kill people. I thought I had no choice but to pilot EVA, but I was
+            just lying to myself. I'm not worthy of piloting an EVA, because I
+            don't understand anything.
+          </h2>
+          <input
+            type="button"
+            name="next-step"
+            class="next-step"
+            value="Final Step"
+          />
+          <input
+            type="button"
+            name="previous-step"
+            class="previous-step"
+            value="Previous Step"
+          />
+        </fieldset>
+        <fieldset>
+          <div class="finish">
+            <h2 class="text">
+              <strong
+                >God knows I'm not perfect, either. I've made tons of stupid
+                mistakes, and later I regretted them. And I've done it over and
+                over again, thousands of times; a cycle of hollow joy and
+                vicious self-hatred. But even so, every time I learned something
+                about myself. Please Shinji, you've got to pilot the EVA and
+                settle this once and for all... for your own sake. Find out why
+                you came here; why you exist at all! Answer your own questions.
+                And when you've found your answers, come back to me. I'll be
+                waiting for you.</strong
+              >
+            </h2>
+          </div>
+          <input
+            type="button"
+            name="previous-step"
+            class="previous-step"
+            value="Previous Step"
+          />
+        </fieldset>
+      </div>
+    </div>
 
     <section class="about" id="about">
       <h1 class="heading"><span> about </span> us</h1>
@@ -119,5 +221,6 @@
         created by <span> Ho Vu Anh </span> | all rights reserved
       </div>
     </section>
+    <script src="script.js"></script>
   </body>
 </html>

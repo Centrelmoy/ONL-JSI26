@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Normal</title>
+    <link rel="stylesheet" type="text/css" href="userinfo.css">
+</head>
+
+<body>
+    <a href="index.html"><button id="myButton"> Click me back home =00 </button></a>
+    <div class="card">
+        <h2>I don't know </h2>
+        <form id="userForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <br>
+            <label for="date_born">Date Born:</label>
+            <input type="date" id="date_born" name="date_born">
+            <br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone">
+            <br>
+            <label for="address">Address:</label>
+            <input type="tel" id="address" name="address">
+            <br>
+            <label for="image">Image:</label>
+            <input type="tel" id="image" name="image">
+            <fieldset>
+                <legend>Gender</legend>
+                <div>
+                    <input type="radio" id="male" name="drone" value="male" />
+                    <label for="male">Male</label>
+                </div>
+                <div>
+                    <input type="radio" id="female" name="drone" value="female" />
+                    <label for="female">Female</label>
+                </div>
+            </fieldset>
+            <br>
+            <button type="submit" id="saveBtn">Save</button>
+        </form>
+    </div>
+</body>
+<script type="module" src="userinfo.js"></script>
+<script type="module" src="config.js"></script>
+
+</html>
