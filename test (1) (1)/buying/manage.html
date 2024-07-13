@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="manage.css">
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 100px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .box-add-blog input[type=text],
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .box-add-blog input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .box-add-blog input[type=submit]:hover {
+        background-color: #45a049;
+    }
+    
+    .box-add-blog {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    .product-render table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .product-render th,
+    td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    .product-render tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    .product-render th {
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+
+<body>
+    <div>
+        <div> Hello <span id="email"></span></div>
+        <div> <button id="logout_btn">Log out</button></div>
+        <a href="userinfo.html"> <button id="profile">Go to profile</button></a>
+    </div>
+
+    <div class="box">
+        <div class="box-1">
+            <div id="box-add-blog" class="box-add-blog">
+                <div class="box-add-blog-title">MANAGE PRODUCT</div>
+                <form action="/action_page.php">
+                    <label for="product_name">PRODUCT NAME</label>
+                    <input id="product_name" type="text" id="fname" name="product_name" placeholder="Product name..">
+
+                    <label for="price">PRICE</label>
+                    <input id="price" type="text" id="lname" name="price" placeholder="Price..">
+
+                    <label for="Image">IMAGE</label>
+                    <input id="image" type="text" id="lname" name="Image" placeholder="Image..">
+
+                    <label for="description">DESCRIPTION</label>
+                    <input id="description" type="text" id="lname" name="description" placeholder="Description..">
+
+                    <label for="product_type">PRODUCT TYPE</label>
+                    <select id="product_type" name="product_type">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+
+                    <label>Best Seller
+                        <input type="checkbox" id="isBestSeller">
+                        <span class="checkmark"></span>
+                      </label>
+                    <button id="add_product_btn"
+                        style="width: 100%; height: 40px; cursor: pointer; background-color: #45a049;" type="submit"
+                        value="Submit">Submit</button>
+                </form>
+            </div>
+
+            <div class="product-render">
+                <h2>Product </h2>
+                <table id="product-render">
+                    <tr>
+                        <th>Image</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Edit</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Griffin</td>
+                        <td>$100</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <button id="myBtn">Open Modal</button>
+        <div id="myModal" class="modal">
+
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div>
+                    <div class="box-add-blog-title">UPDATE PRODUCT</div>
+                    <form action="/action_page.php">
+                        <label for="product_name">PRODUCT NAME</label>
+                        <input id="update_product_name" type="text" id="fname" name="product_name"
+                            placeholder="Product name..">
+
+                        <label for="price">PRICE</label>
+                        <input id="update_price" type="text" id="lname" name="price" placeholder="Price..">
+
+                        <label for="Image">IMAGE</label>
+                        <input id="update_image" type="text" id="lname" name="Image" placeholder="Image..">
+
+                        <label for="description">DESCRIPTION</label>
+                        <input id="update_description" type="text" id="lname" name="description" placeholder="Description..">
+
+                        <label for="product_type">PRODUCT TYPE</label>
+                        <select id="update_product_type" name="product_type">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+
+                        <label>Best Seller
+                            <input type="checkbox" id="update_isBestSeller">
+                            <span class="checkmark"></span>
+                          </label>
+
+                        <button id="update_product_btn"
+                            style="width: 100%; height: 40px; cursor: pointer; background-color: #45a049;" type="submit"
+                            value="Submit">Submit</button>
+                    </form>
+                </div>
+                </p>
+            </div>
+
+        </div>
+</body>
+<script type="module" src="config.js"></script>
+<script type="module" src="manage.js"></script>
+<script>
+
+</script>
+
+</html>

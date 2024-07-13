@@ -1,0 +1,111 @@
+.box{
+    width: 100%;
+    height: auto;
+}
+
+.box-1{
+    width: 80%;
+    height: 100%;
+    background-color: #f2f2f2;
+    margin: auto;
+    border-radius: 15px;
+}
+
+.box-add-blog{
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    display: none;
+}
+
+.box-render{
+    width: 90%;
+    height: 80%;
+    background-color: blueviolet;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+/* .box-blog{
+    width: 23%;
+    height: 300px;
+    background-color: #fff;
+    border: 1px solid #000;
+} */
+
+.details {
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+#profile {
+    font-size: 20px;
+    margin: 5px;
+}
+
+#logout_btn {
+    font-size: 20px;
+    margin: 5px;
+}
+
+#email {
+    font-size: 25px;
+    margin: 5px;
+}
+
+.text {
+    font-size: 25px;
+    margin: 5px;
+}
+
+.btn-delete{
+	padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.btn-update{
+	padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.product-render button{
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-left: 20px;
+    background-color: aquamarine;
+    border: none;
+}
+.product-render button:hover{
+    background-color: blueviolet;
+}
+
+.model-content input[type=text],
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .model-content input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .model-content input[type=submit]:hover {
+        background-color: #45a049;
+    }

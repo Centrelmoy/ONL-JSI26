@@ -1,0 +1,49 @@
+.card {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  
+  .card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .card input[type="text"],
+  .card input[type="number"],
+  .card input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .card button[type="button"],
+  .card button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .card button[type="submit"] {
+    background-color: #45a049;
+  }
+  
+  .card button[type="button"]:hover,
+  .card button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  .card button[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
