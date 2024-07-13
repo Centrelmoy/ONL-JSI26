@@ -36,7 +36,7 @@ logout_btn.addEventListener("click", (e) => {
   e.preventDefault();
   signOut(auth)
     .then(() => {
-      window.location.href = "login.html";
+      window.location.href = "../home/index.html";
     })
     .catch((error) => {
       alert(error.message);
